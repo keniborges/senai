@@ -1,0 +1,15 @@
+D:\Workspace\Senai\Api\BigData.Service\bin\Debug\net5.0\BigData.Service.deps.json
+D:\Workspace\Senai\Api\BigData.Service\bin\Debug\net5.0\BigData.Service.dll
+D:\Workspace\Senai\Api\BigData.Service\bin\Debug\net5.0\ref\BigData.Service.dll
+D:\Workspace\Senai\Api\BigData.Service\bin\Debug\net5.0\BigData.Service.pdb
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.csproj.AssemblyReference.cache
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.AssemblyInfoInputs.cache
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.AssemblyInfo.cs
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.csproj.CoreCompileInputs.cache
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.dll
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\ref\BigData.Service.dll
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.pdb
+D:\Workspace\Senai\Api\BigData.Service\bin\Debug\net5.0\BigData.Domain.dll
+D:\Workspace\Senai\Api\BigData.Service\bin\Debug\net5.0\BigData.Domain.pdb
+D:\Workspace\Senai\Api\BigData.Service\obj\Debug\net5.0\BigData.Service.csproj.CopyComplete

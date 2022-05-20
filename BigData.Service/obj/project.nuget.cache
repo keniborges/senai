@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yhgq5Lnjilellq+cfsUZHtSMLOs3xx9ixS3ytl86MY9LU78GfXyetxSvHIA62wEAQkJBHnwIRAW4p+w6kJemwg==",
+  "dgSpecHash": "JPN/yAMiqr25rGLfOCP4zhn84Uzmsvo3xMh5m9xeGUnhsnhoNy99irSWuo9PY6uBWyV5lkCmsf068dahTPPGVQ==",
   "success": true,
   "projectFilePath": "D:\\Workspace\\Senai\\Api\\BigData.Service\\BigData.Service.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\keni\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\keni\\.nuget\\packages\\fluentvalidation\\11.0.1\\fluentvalidation.11.0.1.nupkg.sha512",
+    "C:\\Users\\keni\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

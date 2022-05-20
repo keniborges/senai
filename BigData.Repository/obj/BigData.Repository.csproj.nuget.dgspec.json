@@ -4,14 +4,14 @@
     "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj": {}
   },
   "projects": {
-    "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj": {
+    "D:\\Workspace\\Senai\\Api\\BigData.Domain\\BigData.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj",
-        "projectName": "BigData.Repository",
-        "projectPath": "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj",
+        "projectUniqueName": "D:\\Workspace\\Senai\\Api\\BigData.Domain\\BigData.Domain.csproj",
+        "projectName": "BigData.Domain",
+        "projectPath": "D:\\Workspace\\Senai\\Api\\BigData.Domain\\BigData.Domain.csproj",
         "packagesPath": "C:\\Users\\keni\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Senai\\Api\\BigData.Repository\\obj\\",
+        "outputPath": "D:\\Workspace\\Senai\\Api\\BigData.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -46,6 +46,91 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj",
+        "projectName": "BigData.Repository",
+        "projectPath": "D:\\Workspace\\Senai\\Api\\BigData.Repository\\BigData.Repository.csproj",
+        "packagesPath": "C:\\Users\\keni\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspace\\Senai\\Api\\BigData.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\keni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Workspace\\Nuget_Package": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/UJhJOKkskK5HlUIXsauXW16mOZFgi5WEhdNIkeVOa6JXJsgewi/api": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Workspace\\Senai\\Api\\BigData.Domain\\BigData.Domain.csproj": {
+                "projectPath": "D:\\Workspace\\Senai\\Api\\BigData.Domain\\BigData.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
