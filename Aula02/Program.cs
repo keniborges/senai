@@ -72,30 +72,54 @@ namespace Aula02
 
             #region Custo Cortina
 
-            Console.WriteLine("Quantos Metros de Cortina usará? :");
-            var metrosUtilizados = Console.ReadLine();
-            Console.WriteLine("Qual modelo de Cortina você usará?\n\n 0 : Voal\n 1: Persiana\n 2 : Rolo\n 3 : Romana\n");
-            var tipo = Console.ReadLine();
+            //Console.WriteLine("Quantos Metros de Cortina usará? :");
+            //var metrosUtilizados = Console.ReadLine();
+            //Console.WriteLine("Qual modelo de Cortina você usará?\n\n 0 : Voal\n 1: Persiana\n 2 : Rolo\n 3 : Romana\n");
+            //var tipo = Console.ReadLine();
 
-            var custo = new CustoCortina();
-            decimal valor = 0;
-            switch (tipo)
+            //var custo = new CustoCortina();
+            //decimal valor = 0;
+            //switch (tipo)
+            //{
+            //    case "0":
+            //        valor = custo.CalcularCusto(TipoCortina.Voal, Convert.ToInt16(metrosUtilizados));
+            //        break;
+            //    case "1":
+            //        valor = custo.CalcularCusto(TipoCortina.Persiana, Convert.ToInt16(metrosUtilizados));
+            //        break;
+            //    case "2":
+            //        valor = custo.CalcularCusto(TipoCortina.Rolo, Convert.ToInt16(metrosUtilizados));
+            //        break;
+            //    case "3":
+            //        valor = custo.CalcularCusto(TipoCortina.Romana, Convert.ToInt16(metrosUtilizados));
+            //        break;
+            //}
+            //Console.WriteLine("O valor total seria de : " + valor);
+            //Console.ReadLine();
+
+
+            #endregion
+
+            #region Valor Consumo Médio
+
+            var chevette = new Veiculo()
             {
-                case "0":
-                    valor = custo.CalcularCusto(TipoCortina.Voal, Convert.ToInt16(metrosUtilizados));
-                    break;
-                case "1":
-                    valor = custo.CalcularCusto(TipoCortina.Persiana, Convert.ToInt16(metrosUtilizados));
-                    break;
-                case "2":
-                    valor = custo.CalcularCusto(TipoCortina.Rolo, Convert.ToInt16(metrosUtilizados));
-                    break;
-                case "3":
-                    valor = custo.CalcularCusto(TipoCortina.Romana, Convert.ToInt16(metrosUtilizados));
-                    break;
-            }
-            Console.WriteLine("O valor total seria de : " + valor);
-            Console.ReadLine();
+                Nome = "Chevette Etti",
+                Ano = 1973,
+                MediaConsumo = 4,
+                Combustivel = new Gasolina()
+            };
+
+            var hilux = new Veiculo()
+            {
+                Nome = "Hilux SW4",
+                Ano = 2012,
+                MediaConsumo = 4,
+                Combustivel = new Diesel()
+            };
+
+            var consumoChevette = chevette.Combustivel.CalcularCusto(100, chevette.MediaConsumo);
+            var consumoHilux = hilux.Combustivel.CalcularCusto(100, hilux.MediaConsumo);
 
 
             #endregion
