@@ -1,21 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Aula03.Entidades
 {
-    public class Professor
+    public class Professor : BaseEntity
     {
-        public long Id { get; set; }
-
+        [MaxLength(60), Required]
         public string Nome { get; set; }
 
         public long EscolaId { get; set; }
         public Escola Escola { get; set; }
-
-        public List<Aluno> Alunos { get; set; }
-
-
-
-
 
 
     }

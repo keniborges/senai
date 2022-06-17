@@ -3,15 +3,17 @@ using System;
 using Aula03.Contexto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Aula03.Migrations
 {
     [DbContext(typeof(SenaiContext))]
-    partial class SenaiContextModelSnapshot : ModelSnapshot
+    [Migration("20220617120102_Primeira Migração")]
+    partial class PrimeiraMigração
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
