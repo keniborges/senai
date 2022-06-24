@@ -1,0 +1,38 @@
+﻿@using Escola.Entidades
+@{
+    var professores = ViewData["professores"] as List<Professor>;
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <a type="button" asp-action="Nova" asp-controller="Professor" class="btn btn-primary float-right">Novo Professor</a>
+    </div>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Colégio</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            foreach (var professor in professores)
+            {
+                <tr>
+                    <th scope="row">@professor.Id</th>
+                    <td>@professor.Nome</td>
+                    <td>@professor.Colegio.Nome</td>
+                </tr>
+            }
+        }
+
+
+
+
+    </tbody>
+</table>

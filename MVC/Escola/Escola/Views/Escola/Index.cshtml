@@ -1,0 +1,42 @@
+﻿@using Escola.Entidades
+@{
+    var colegios = ViewData["colegios"] as List<Colegio>;
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <a type="button" asp-action="Nova" asp-controller="Escola" class="btn btn-primary float-right">Nova Escola</a>
+    </div>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Colégio</th>
+            <th scope="col">Rua</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade/Uf</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            foreach (var colegio in colegios)
+            {
+                <tr>
+                    <th scope="row">@colegio.Id</th>
+                    <td>@colegio.Nome</td>
+                    <td>@colegio.Endereco.Rua</td>
+                    <td>@colegio.Endereco.Bairro</td>
+                    <td>@colegio.Endereco.Cidade - @colegio.Endereco.Estado</td>
+                </tr>
+            }
+        }
+
+
+
+
+    </tbody>
+</table>
