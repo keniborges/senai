@@ -17,15 +17,6 @@ namespace Aula03
             _context = new SenaiContext();
             ChamarMenu();
         }
-        //public static string GetDisplayName(this Enum val)
-        //{
-        //    return val.GetType()
-        //              .GetMember(val.ToString())
-        //              .FirstOrDefault()
-        //              ?.GetCustomAttribute<DisplayAttribute>(false)
-        //              ?.Name
-        //              ?? val.ToString();
-        //}
 
         private static void ChamarMenu()
         {
