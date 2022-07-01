@@ -8,5 +8,9 @@ namespace Escola.Repositorios.Interfaces
         bool Salvar(Colegio colegio);
 
         List<Colegio> BuscarTodos();
+
+        Colegio BuscarPorId(long id);
+
+        bool Excluir(Colegio colegio);
     }
 }

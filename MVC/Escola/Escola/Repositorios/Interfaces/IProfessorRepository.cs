@@ -7,6 +7,10 @@ namespace Escola.Repositorios.Interfaces
     {
         bool Salvar(Professor professor);
 
+        bool Excluir(Professor professor);
+
+        Professor BuscarPorId(long id);
+
         List<Professor> BuscarTodos();
     }
 }

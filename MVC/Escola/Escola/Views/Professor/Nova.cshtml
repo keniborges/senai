@@ -1,12 +1,11 @@
 ﻿@using Escola.Entidades
 @model Escola.Models.ProfessorModel
-@{
-    var colegios = ViewData["colegios"] as List<Colegio>;
-}
+
 
 <form asp-action="Nova">
 
     <div class=" form-row">
+        <input type="hidden" asp-for="Id">
         <div class="form-group col-md-12">
             <label for="staticEmail" class="col-form-label">Nome do Professor</label>
             <input type="text" class="form-control" placeholder="Nome da Escola" asp-for="Nome" />
@@ -17,13 +16,13 @@
     <div class="form-row">
         <div class="form-group col-md-12">
             <label class="col-form-label">Selecione a Escola</label>
-            <select class="form-control" asp-for="ColegioId">
-                @{
+            <select class="form-control" asp-for="ColegioId" asp-items="@ViewBag.Colegios">
+                @*@{
                     foreach (var colegio in colegios)
                     {
                         <option value="@colegio.Id">@colegio.Nome</option>
                     }
-                }
+                }*@
             </select>
         </div>
     </div>

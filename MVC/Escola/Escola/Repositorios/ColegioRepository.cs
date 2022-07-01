@@ -20,7 +20,10 @@ namespace Escola.Repositorios
         {
             try
             {
-                _context.Colegio.Add(colegio);
+                if (colegio.Id == 0)
+                    _context.Colegio.Add(colegio);
+                else
+                    _context.Colegio.Update(colegio);
                 _context.SaveChanges();
                 return true;
             }
@@ -33,6 +36,25 @@ namespace Escola.Repositorios
         public List<Colegio> BuscarTodos()
         {
             return _context.Colegio.Include(c => c.Endereco).ToList();
+        }
+
+        public Colegio BuscarPorId(long id)
+        {
+            return _context.Colegio.Include(c => c.Endereco).Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public bool Excluir(Colegio colegio)
+        {
+            try
+            {
+                _context.Colegio.Remove(colegio);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }            
         }
 
     }

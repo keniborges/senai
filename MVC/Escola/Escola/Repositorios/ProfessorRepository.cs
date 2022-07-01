@@ -20,7 +20,10 @@ namespace Escola.Repositorios
         {
             try
             {
-                _context.Professor.Add(professor);
+                if (professor.Id == 0)
+                    _context.Professor.Add(professor);
+                else
+                    _context.Professor.Update(professor);
                 _context.SaveChanges();
                 return true;
             }
@@ -34,5 +37,25 @@ namespace Escola.Repositorios
         {
             return _context.Professor.Include(c => c.Colegio).ToList();
         }
+
+        public Professor BuscarPorId(long id)
+        {
+            return _context.Professor.Include(c => c.Colegio).Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public bool Excluir(Professor professor)
+        {
+            try
+            {
+                _context.Professor.Remove(professor);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

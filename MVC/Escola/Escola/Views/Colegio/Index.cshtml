@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-12">
-        <a type="button" asp-action="Nova" asp-controller="Escola" class="btn btn-primary float-right">Nova Escola</a>
+        <a type="button" asp-action="Nova" asp-controller="Colegio" class="btn btn-primary float-right">Nova Escola</a>
     </div>
 </div>
 <br />
@@ -18,6 +18,7 @@
             <th scope="col">Rua</th>
             <th scope="col">Bairro</th>
             <th scope="col">Cidade/Uf</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +32,10 @@
                     <td>@colegio.Endereco.Rua</td>
                     <td>@colegio.Endereco.Bairro</td>
                     <td>@colegio.Endereco.Cidade - @colegio.Endereco.Estado</td>
+                    <td>
+                        <a href="Colegio/Editar/@colegio.Id"><i class="bi-pencil" alt="Editar" style="padding-right:10px;"></i></a>
+                        <i class="bi-x-circle" alt="Excluir" onclick="Excluir(@colegio.Id)" ></i>
+                    </td>
                 </tr>
             }
         }
@@ -40,3 +45,5 @@
 
     </tbody>
 </table>
+
+<script src="~/js/Escola/grid.js"></script>

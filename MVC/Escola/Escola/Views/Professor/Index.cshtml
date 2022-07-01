@@ -16,6 +16,7 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Colégio</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,10 @@
                     <th scope="row">@professor.Id</th>
                     <td>@professor.Nome</td>
                     <td>@professor.Colegio.Nome</td>
+                    <td>
+                        <a href="Professor/Editar/@professor.Id"><i class="bi-pencil" alt="Editar" style="padding-right:10px;"></i></a>
+                        <i class="bi-x-circle" alt="Excluir" onclick="Excluir(@professor.Id)"></i>
+                    </td>
                 </tr>
             }
         }

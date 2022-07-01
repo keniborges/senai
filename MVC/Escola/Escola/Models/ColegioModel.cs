@@ -2,11 +2,12 @@
 
 namespace Escola.Models
 {
-    public class EscolaModel
+    public class ColegioModel
     {
+        public long Id { get; set; }
+
         [Required(ErrorMessage = "Campo Nome da Escola é Obrigatório")]
         public string Nome { get; set; }
-
 
         public string Rua { get; set; }
 

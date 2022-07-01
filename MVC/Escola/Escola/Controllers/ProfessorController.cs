@@ -2,12 +2,9 @@
 using Escola.Models;
 using Escola.Repositorios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Escola.Controllers
 {
@@ -26,6 +23,11 @@ namespace Escola.Controllers
 
         }
 
+        private void IncludeViewBagColegios()
+        {
+            ViewBag.Colegios = _colegioRepository.BuscarTodos().Select(c => new SelectListItem() { Text = c.Nome, Value = c.Id.ToString() }).ToList();
+        }
+
         public IActionResult Index()
         {
             ViewData["professores"] = _professorRepository.BuscarTodos();
@@ -35,7 +37,7 @@ namespace Escola.Controllers
         public IActionResult Nova()
         {
             var model = new ProfessorModel();
-            ViewData["colegios"] = _colegioRepository.BuscarTodos();
+            IncludeViewBagColegios();
             return View(model);
         }
 
@@ -52,10 +54,36 @@ namespace Escola.Controllers
                 var retorno = _professorRepository.Salvar(professor);
                 return RedirectToAction("Index", "Professor");
             }
+            IncludeViewBagColegios();
             return View(model);
         }
 
+        public IActionResult Editar(long id)
+        {
+            var professor = _professorRepository.BuscarPorId(id);
+            var model = new ProfessorModel()
+            {
+                Id = professor.Id,
+                Nome = professor.Nome,
+                ColegioId = professor.ColegioId
+            };
+            IncludeViewBagColegios();
+            return View("Nova", model);
+        }
 
+        public IActionResult Excluir(long id)
+        {
+            try
+            {
+                var professor = _professorRepository.BuscarPorId(id);
+                _professorRepository.Excluir(professor);
+                return Json(true);
+            }
+            catch
+            {
+                return Json(false);
+            }
+        }
 
     }
 }
