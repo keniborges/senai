@@ -1,4 +1,7 @@
 ﻿@model Escola.Models.ColegioModel
+@{
+    var estados = ViewBag.Estados;
+}
 
 <form asp-action="Nova">
 
@@ -6,7 +9,7 @@
         <input type="hidden" asp-for="Id">
         <div class="form-group col-md-12">
             <label class="col-form-label">Nome da Escola</label>
-            <input type="text" class="form-control" placeholder="Nome da Escola" asp-for="Nome" />            
+            <input type="text" class="form-control" placeholder="Nome da Escola" asp-for="Nome" />
             <span class="field-validation-valid text-danger" asp-validation-for="Nome"></span>
         </div>
     </div>
@@ -29,11 +32,13 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label class="col-form-label">Estado</label>
-            <input type="text" class="form-control" placeholder="Estado" asp-for="Estado">
+            <select class="form-control" asp-for="Estado" asp-items="estados" onchange="Cidades(this)"></select>
+            @*<input type="text" class="form-control" placeholder="Estado" asp-for="Estado">*@
         </div>
         <div class="form-group col-md-8">
             <label class="col-form-label">Cidade</label>
-            <input type="text" class="form-control" placeholder="Cidade" asp-for="Cidade">
+            <select class="form-control" asp-for="Cidade"></select>
+            @*<input type="text" class="form-control" placeholder="Cidade" asp-for="Cidade">*@
         </div>
     </div>
 
@@ -41,3 +46,31 @@
     <button type="submit" class="btn btn-primary">Salvar</button>
 
 </form>
+
+
+
+<script>
+
+
+
+
+    function buscarCidadesPorUf(estado) {
+        debugger
+        event.preventDefault();
+        const URL = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/SC/municipios`;
+        //const URL = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/' . estado . '/municipios';
+        fetch(URL).then(resposta => resposta.json());
+
+
+    }
+
+    function Cidades(item) {
+        var estado = $(item).find('option:selected').text();
+        var cidades = buscarCidadesPorUf(estado);
+        console.log(cidades);
+    }
+
+
+
+
+</script>
