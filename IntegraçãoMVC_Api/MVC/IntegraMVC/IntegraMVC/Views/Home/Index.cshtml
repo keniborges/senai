@@ -1,0 +1,38 @@
+﻿@{
+    var marcas = ViewBag.Marcas;
+}
+
+<div class="mb-12">
+    <h1 class="display-4">Buscar Veículos</h1>
+    <label class="form-label">Marca do Veículo</label>
+    <select name="marca" id="marca" asp-items="marcas" onchange="BuscarModelos()" class="form-control"></select>
+
+    <label class="form-label">Modelo do Veículo</label>
+    <select name="modelo" id="modelo" class="form-control">
+        <option value="">Selecione a Marca</option>
+    </select>
+</div>
+
+
+
+
+
+<script>
+    function BuscarModelos() {
+        var marcaId = $("#marca option:selected").val();
+        $("#modelo").html("");
+        $.ajax({
+            url: 'Home/BuscarModelos',
+            datatype: 'json',
+            contentType: 'application/json; charset=utf-8',
+            type: 'GET',
+            data: { 'marcaId': marcaId },
+            success: function (data) {
+                $(data).each(function () {
+                    $("#modelo").append('<option value=' + this.id + '>' + this.nome + '</option>');                    
+                })
+            },
+            error: function (error) { }
+        })
+    }
+</script>
