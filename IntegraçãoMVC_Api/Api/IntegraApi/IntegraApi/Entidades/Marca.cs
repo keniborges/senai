@@ -1,12 +1,11 @@
-﻿namespace IntegraApi.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace IntegraApi.Entidades
 {
-    public class Marca
+    public class Marca : Entity
     {
-
-        public long Id { get; set; }
-
+        [Required]
         public string Nome { get; set; }
-
 
     }
 }

@@ -27,3 +27,12 @@ D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\obj\Debu
 D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\obj\Debug\net5.0\ref\IntegraApi.dll
 D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\obj\Debug\net5.0\IntegraApi.pdb
 D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\obj\Debug\net5.0\IntegraApi.genruntimeconfig.cache
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Humanizer.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Npgsql.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Workspace\Testes\Senai\IntegraçãoMVC_Api\Api\IntegraApi\IntegraApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

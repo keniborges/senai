@@ -1,0 +1,41 @@
+﻿@*@using IntegraMVC.Entidades*@
+@{
+    var marcas = ViewBag.Marcas;
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <a type="button" asp-action="CrudMarca" asp-controller="Home" class="btn btn-primary float-right">Nova Marca</a>
+    </div>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            foreach (var marca in marcas)
+            {
+                <tr>
+                    <th scope="row">@marca.Id</th>
+                    <td width="90%">@marca.Nome</td>
+                    <td>
+                        <a href="Veiculo/Editar/@marca.Id"><i class="bi-pencil" alt="Editar" style="padding-right:10px;"></i></a>
+                        <i class="bi-x-circle" alt="Excluir" onclick="Excluir(@marca.Id)"></i>
+                    </td>
+                </tr>
+            }
+        }
+
+
+
+
+    </tbody>
+</table>

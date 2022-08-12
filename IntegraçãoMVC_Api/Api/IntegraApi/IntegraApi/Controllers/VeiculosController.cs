@@ -1,4 +1,5 @@
 ﻿using IntegraApi.Entidades;
+using IntegraApi.Repositorios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,20 +13,50 @@ namespace IntegraApi.Controllers
     public class VeiculosController : ControllerBase
     {
 
+        private readonly IMarcaRepository _marcaRepository;
+        private readonly IModeloRepository _modeloRepository;
+
+        public VeiculosController(IMarcaRepository marcaRepository, IModeloRepository modeloRepository)
+        {
+            _marcaRepository = marcaRepository;
+            _modeloRepository = modeloRepository;
+        }
+
+        [HttpPost]
+        [Route("inserir-marca")]
+        public bool InserirMarca([FromBody] Marca marca)
+        {
+            try
+            {
+                return _marcaRepository.Salvar(marca);
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+        [HttpPost]
+        [Route("inserir-modelo")]
+        public bool InserirModelo([FromBody] Modelo modelo)
+        {
+            try
+            {
+                return _modeloRepository.Salvar(modelo);
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
 
         [HttpGet]
         [Route("pegar-marcas")]
         public IEnumerable<Marca> PegarMarcas()
         {
-            var marcas = new List<Marca>();
-            marcas.Add(new Marca() { Id = 1, Nome = "Fiat" });
-            marcas.Add(new Marca() { Id = 2, Nome = "Ford" });
-            marcas.Add(new Marca() { Id = 3, Nome = "Volkswagem" });
-            marcas.Add(new Marca() { Id = 4, Nome = "Chevrolet" });
-            marcas.Add(new Marca() { Id = 5, Nome = "Honda" });
-            marcas.Add(new Marca() { Id = 6, Nome = "Toyota" });
-
-            return marcas;
+            return _marcaRepository.BuscarTodos();
         }
 
         private IEnumerable<Modelo> Modelos()
@@ -51,10 +82,8 @@ namespace IntegraApi.Controllers
         [Route("pegar-modelos")]
         public IEnumerable<Modelo> PegarModelos(long marcaId)
         {
-            var modelos = Modelos().Where(c => c.MarcaId == marcaId).ToList();
-            return modelos;
+            return _modeloRepository.BuscarPorMarcaId(marcaId);
         }
-
 
 
     }

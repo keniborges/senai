@@ -1,0 +1,17 @@
+﻿
+@model IntegraMVC.Models.MarcaModel
+<form asp-action="CrudMarca">
+
+    <div class=" form-row">
+        <input type="hidden" asp-for="Id">
+        <div class="form-group col-md-12">
+            <label class="col-form-label">Nome da Marca</label>
+            <input type="text" class="form-control" placeholder="Nome da Marca" asp-for="Nome" />
+            <span class="field-validation-valid text-danger" asp-validation-for="Nome"></span>
+        </div>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+
+</form>
